@@ -79,4 +79,90 @@
         .content-box { background: #ffffff; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); text-align: left; }
 
         /* 예배안내 표 */
-        .timetable { width: 100%; border-collapse: collapse; margin-top: 20px
+        .timetable { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        .timetable th, .timetable td { padding: 12px; border-bottom: 1px solid #eee; text-align: center; }
+        .timetable th { background-color: #f9fafb; color: #2c3e50; font-size: 15px; }
+
+        /* 5. 푸터 */
+        footer { background-color: #2c3e50; color: #fff; text-align: center; padding: 40px 20px; font-size: 14px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="#"><img src="logo3.png" alt="성인교회 로고"></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#intro">교회소개</a></li>
+                <li><a href="#worship">예배안내</a></li>
+                <li><a href="#news">교회소식</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero"></div>
+
+    <section id="intro">
+        <h2>교회소개</h2>
+        <div class="content-box">
+            <p style="text-align: center; font-size: 18px; font-weight: bold; margin-bottom: 20px;">"성인교회 홈페이지 방문을 환영합니다."</p>
+            <p>여기에 성인교회의 소개글이나 목사님 인사말을 적으실 수 있습니다. 하나님 안에서 행복한 공동체, 성인교회입니다.</p>
+        </div>
+    </section>
+
+    <section id="worship" style="background-color: #f8f9fa; max-width: 100%;">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <h2>예배안내</h2>
+            <div class="content-box">
+                <table class="timetable">
+                    <thead>
+                        <tr>
+                            <th>예배명</th>
+                            <th>시간</th>
+                            <th>장소</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>주일 대예배</b></td>
+                            <td>오전 11:00</td>
+                            <td>본당</td>
+                        </tr>
+                        <tr>
+                            <td><b>주일 오후예배</b></td>
+                            <td>오후 2:00</td>
+                            <td>본당</td>
+                        </tr>
+                        <tr>
+                            <td><b>수요기도회</b></td>
+                            <td>오후 7:30</td>
+                            <td>소예배실</td>
+                        </tr>
+                        <tr>
+                            <td><b>새벽기도회</b></td>
+                            <td>월~금 오전 5:30</td>
+                            <td>소예배실</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="news">
+        <h2>교회소식</h2>
+        <div class="content-box" style="text-align: center;">
+            <p>교회 소식 및 주보가 업데이트되는 공간입니다.</p>
+            <p style="color: #777; margin-top: 10px; font-size: 14px;">(현재 준비 중입니다.)</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 대한예수교장로회 성인교회. All Rights Reserved.</p>
+        <p style="font-size: 12px; margin-top: 8px; color: #bdc3c7;">교회 주소: 여기에 교회 주소를 입력하세요 | 전화번호: 000-000-0000</p>
+    </footer>
+
+</body>
+</html>
