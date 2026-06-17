@@ -13,7 +13,7 @@
         /* 상단 헤더 (로고 및 메뉴) */
         header {
             background-color: #ffffff;
-            padding: 10px 20px; /* 위아래 여백을 줄이고 좌우 여백을 20px로 줄여 왼쪽으로 더 붙게 했습니다 */
+            padding: 10px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -27,29 +27,29 @@
             display: flex;
             align-items: center;
         }
-        .logo { text-align: left; }
-        .logo .denomination { font-size: 12px; color: #777; font-weight: bold; letter-spacing: 1px; display: block; margin-bottom: 2px; }
-        .logo .church-name { font-size: 24px; color: #2c3e50; font-weight: bold; }
         
         nav ul { display: flex; list-style: none; }
         nav ul li { margin-left: 30px; font-weight: bold; color: #555; }
         nav ul li a:hover { color: #3498db; }
 
-        /* 메인 비주얼 (교회사진 + 표어) */
+        /* 메인 비주얼 (PC 버전 기본 설정 - background.png) */
         .hero {
-            /* 임시 배경색 (나중에 실제 교회 사진 주소로 바꿀 수 있습니다) */
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1438032005730-c779502df39b?q=80&w=1600&auto=format&fit=crop') no-repeat center center/cover;
-            height: 450px;
+            background: url('background.png') no-repeat center center/cover;
+            width: 100%;
+            height: 550px;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            color: #ffffff;
-            text-align: center;
-            padding: 20px;
+            transition: background 0.3s ease;
         }
-        .hero h2 { font-size: 20px; font-weight: normal; letter-spacing: 2px; margin-bottom: 15px; color: #e0e0e0; }
-        .hero h1 { font-size: 38px; font-weight: bold; line-height: 1.4; word-break: keep-all; }
+
+        /* 📱 모바일 화면 자동 전환 설정 (backgroundmobile.png) */
+        @media (max-width: 768px) {
+            .hero {
+                background: url('backgroundmobile.png') no-repeat center center/cover;
+                height: 500px;
+            }
+        }
 
         /* 공통 섹션 스타일 */
         section { padding: 80px 20px; max-width: 900px; margin: 0 auto; text-align: center; }
@@ -59,29 +59,4 @@
 
         /* 예배안내 표 스타일 */
         .timetable { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        .timetable th, .timetable td { padding: 12px; border-bottom: 1px solid #ddd; text-align: center; }
-        .timetable th { background-color: #f8f9fa; color: #2c3e50; }
-
-        /* 푸터 (하단 정보) */
-        footer { background-color: #2c3e50; color: #fff; text-align: center; padding: 30px 20px; font-size: 14px; }
-    </style>
-</head>
-<body>
-
-    <header>
-        <div class="logo">
-            <a href="#"><img src="logo2.png" alt="대한예수교장로회 성인교회 로고" style="height: 80px; display: block;"></a>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#intro">교회소개</a></li>
-                <li><a href="#worship">예배안내</a></li>
-                <li><a href="#board">게시판</a></li>
-            </ul>
-        </</nav>
-    </header>
-
-    <div class="hero">
-        <h2>2026년 성인교회 표어</h2>
-        <h1>"이곳에 우리 교회 올해 표어를 입력해 주세요"</h1>
-    </div>
+        .timetable th, .timetable
