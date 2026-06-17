@@ -3,23 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>성인교회에 오신 것을 환영합니다</title>
+    <title>대한예수교장로회 성인교회</title>
     <style>
-        body { font-family: 'Malgun Gothic', sans-serif; text-align: center; padding: 50px; background-color: #f9f9f9; color: #333; }
-        h1 { color: #2c3e50; }
-        .info { background: white; max-width: 600px; margin: 30px auto; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        /* 기본 스타일 리셋 */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Malgun Gothic', sans-serif; color: #333; line-height: 1.6; background-color: #fcfcfc; }
+        a { text-decoration: none; color: inherit; }
+
+        /* 상단 헤더 (로고 및 메뉴) */
+        header {
+            background-color: #ffffff;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo { text-align: left; }
+        .logo .denomination { font-size: 12px; color: #777; font-weight: bold; letter-spacing: 1px; display: block; margin-bottom: 2px; }
+        .logo .church-name { font-size: 24px; color: #2c3e50; font-weight: bold; }
+        
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin-left: 30px; font-weight: bold; color: #555; }
+        nav ul li a:hover { color: #3498db; }
+
+        /* 메인 비주얼 (교회사진 + 표어) */
+        .hero {
+            /* 임시 배경색 (나중에 실제 교회 사진 주소로 바꿀 수 있습니다) */
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1438032005730-c779502df39b?q=80&w=1600&auto=format&fit=crop') no-repeat center center/cover;
+            height: 450px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+        }
+        .hero h2 { font-size: 20px; font-weight: normal; letter-spacing: 2px; margin-bottom: 15px; color: #e0e0e0; }
+        .hero h1 { font-size: 38px; font-weight: bold; line-height: 1.4; word-break: keep-all; }
+
+        /* 공통 섹션 스타일 */
+        section { padding: 80px 20px; max-width: 900px; margin: 0 auto; text-align: center; }
+        section h2 { font-size: 28px; color: #2c3e50; margin-bottom: 30px; position: relative; padding-bottom: 10px; }
+        section h2::after { content: ''; display: block; width: 50px; height: 2px; background-color: #3498db; margin: 10px auto 0; }
+        .content-box { background: #ffffff; padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: left; }
+
+        /* 예배안내 표 스타일 */
+        .timetable { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        .timetable th, .timetable td { padding: 12px; border-bottom: 1px solid #ddd; text-align: center; }
+        .timetable th { background-color: #f8f9fa; color: #2c3e50; }
+
+        /* 푸터 (하단 정보) */
+        footer { background-color: #2c3e50; color: #fff; text-align: center; padding: 30px 20px; font-size: 14px; }
     </style>
 </head>
 <body>
 
-    <h1>⛪ 성인교회 홈페이지</h1>
-    <p>안녕하세요! GitHub로 빌드 중인 성인교회 공식 홈페이지입니다.</p>
+    <header>
+        <div class="logo">
+            <span class="denomination">대한예수교장로회</span>
+            <span class="church-name">성인교회</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#intro">교회소개</a></li>
+                <li><a href="#worship">예배안내</a></li>
+                <li><a href="#board">게시판</a></li>
+            </ul>
+        </</nav>
+    </header>
 
-    <div class="info">
-        <h3> 예배 안내</h3>
-        <p>주일 대예배: 오전 11시</p>
-        <p>오시는 길: 곧 업데이트 예정입니다.</p>
+    <div class="hero">
+        <h2>2026년 성인교회 표어</h2>
+        <h1>"이곳에 우리 교회 올해 표어를 입력해 주세요"</h1>
     </div>
-
-</body>
-</html>
