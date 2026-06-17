@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>대한예수교장로회 성인교회</title>
     <style>
-        /* 기본 스타일 리셋 */
+        /* 1. 기본 스타일 리셋 */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Malgun Gothic', sans-serif; color: #333; line-height: 1.6; background-color: #fcfcfc; }
+        body { font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif; color: #333; line-height: 1.6; background-color: #fcfcfc; }
         a { text-decoration: none; color: inherit; }
 
-        /* 상단 헤더 (로고 및 메뉴) */
+        /* 2. 상단 헤더 (PC 기준) */
         header {
             background-color: #ffffff;
-            padding: 10px 20px;
+            padding: 10px 30px; /* PC에선 넉넉한 여백 */
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -23,16 +23,33 @@
             z-index: 100;
         }
         .logo { 
-            text-align: left; 
             display: flex;
             align-items: center;
         }
+        .logo img {
+            height: 80px; /* PC 로고 크기 */
+            display: block;
+        }
         
         nav ul { display: flex; list-style: none; }
-        nav ul li { margin-left: 30px; font-weight: bold; color: #555; }
+        nav ul li { margin-left: 30px; font-weight: bold; color: #444; font-size: 17px; white-space: nowrap; }
         nav ul li a:hover { color: #3498db; }
 
-        /* 메인 비주얼 (PC 버전 기본 설정 - background.png) */
+        /* 3. 모바일 최적화 설정 (화면 폭 768px 이하) */
+        @media (max-width: 768px) {
+            header {
+                padding: 10px 15px; /* 모바일 좌우 여백 축소하여 공간 확보 */
+            }
+            .logo img {
+                height: 50px; /* 모바일에서 로고 크기 작게 조절 */
+            }
+            nav ul li {
+                margin-left: 12px; /* 메뉴 사이 간격을 줄여 한 줄 유지 */
+                font-size: 14px;   /* 메뉴 글자 크기를 줄여 한 줄 유지 */
+            }
+        }
+
+        /* 4. 메인 비주얼 (배경 이미지 전환) */
         .hero {
             background: url('background.png') no-repeat center center/cover;
             width: 100%;
@@ -40,48 +57,46 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            transition: background 0.3s ease;
         }
 
-        /* 📱 모바일 화면 자동 전환 설정 (backgroundmobile.png) */
         @media (max-width: 768px) {
             .hero {
                 background: url('backgroundmobile.png') no-repeat center center/cover;
-                height: 500px;
+                height: 480px;
             }
         }
 
-        /* 공통 섹션 스타일 */
+        /* 5. 본문 섹션 스타일 */
         section { padding: 80px 20px; max-width: 900px; margin: 0 auto; text-align: center; }
         section h2 { font-size: 28px; color: #2c3e50; margin-bottom: 30px; position: relative; padding-bottom: 10px; }
         section h2::after { content: ''; display: block; width: 50px; height: 2px; background-color: #3498db; margin: 10px auto 0; }
-        .content-box { background: #ffffff; padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: left; }
+        .content-box { background: #ffffff; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); text-align: left; }
 
-        /* 예배안내 표 스타일 */
+        /* 예배안내 표 */
         .timetable { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        .timetable th, .timetable td { padding: 12px; border-bottom: 1px solid #ddd; text-align: center; }
-        .timetable th { background-color: #f8f9fa; color: #2c3e50; }
+        .timetable th, .timetable td { padding: 12px; border-bottom: 1px solid #eee; text-align: center; }
+        .timetable th { background-color: #f9fafb; color: #2c3e50; font-size: 15px; }
 
-        /* 푸터 (하단 정보) */
-        footer { background-color: #2c3e50; color: #fff; text-align: center; padding: 30px 20px; font-size: 14px; }
+        /* 6. 푸터 */
+        footer { background-color: #2c3e50; color: #fff; text-align: center; padding: 40px 20px; font-size: 14px; }
     </style>
 </head>
 <body>
 
     <header>
         <div class="logo">
-            <a href="#"><img src="logo2.png" alt="대한예수교장로회 성인교회 로고" style="height: 80px; display: block;"></a>
+            <a href="#"><img src="logo3.png" alt="성인교회 로고"></a>
         </div>
         <nav>
             <ul>
                 <li><a href="#intro">교회소개</a></li>
                 <li><a href="#worship">예배안내</a></li>
-                <li><a href="#news">교회소식</a></li> </ul>
+                <li><a href="#news">교회소식</a></li>
+            </ul>
         </nav>
     </header>
 
-    <div class="hero">
-    </div>
+    <div class="hero"></div>
 
     <section id="intro">
         <h2>교회소개</h2>
@@ -91,7 +106,7 @@
         </div>
     </section>
 
-    <section id="worship" style="background-color: #f4f6f7; max-width: 100%;">
+    <section id="worship" style="background-color: #f8f9fa; max-width: 100%;">
         <div style="max-width: 900px; margin: 0 auto;">
             <h2>예배안내</h2>
             <div class="content-box">
@@ -130,7 +145,9 @@
         </div>
     </section>
 
-    <section id="news"> <h2>교회소식</h2> <div class="content-box" style="text-align: center;">
+    <section id="news">
+        <h2>교회소식</h2>
+        <div class="content-box" style="text-align: center;">
             <p>교회 소식 및 주보가 업데이트되는 공간입니다.</p>
             <p style="color: #777; margin-top: 10px; font-size: 14px;">(현재 준비 중입니다.)</p>
         </div>
@@ -138,7 +155,7 @@
 
     <footer>
         <p>© 대한예수교장로회 성인교회. All Rights Reserved.</p>
-        <p style="font-size: 12px; margin-top: 5px; color: #bdc3c7;">교회 주소: 여기에 교회 주소를 입력하세요 | 전화번호: 000-000-0000</p>
+        <p style="font-size: 12px; margin-top: 8px; color: #bdc3c7;">교회 주소: 여기에 교회 주소를 입력하세요 | 전화번호: 000-000-0000</p>
     </footer>
 
 </body>
