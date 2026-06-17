@@ -27,7 +27,7 @@
             align-items: center;
         }
         .logo img {
-            height: 80px; /* PC 로고 크기 */
+            height: 80px;
             display: block;
         }
         
@@ -38,14 +38,14 @@
         /* 3. 📱 모바일 최적화 설정 (화면 폭 768px 이하) */
         @media (max-width: 768px) {
             header {
-                padding: 8px 10px; /* 모바일에서 헤더 위아래 여백 미세 조절 */
+                padding: 8px 10px;
             }
             .logo img {
-                height: 65px; /* 💡 모바일 로고 크기를 50px에서 65px로 키웠습니다 */
+                height: 65px;
             }
             nav ul li {
-                margin-left: 10px; /* 로고가 커진 만큼 메뉴 간격을 살짝 더 좁혀 한 줄 유지 */
-                font-size: 13.5px; /* 메뉴 글자 크기를 미세하게 조절 */
+                margin-left: 10px;
+                font-size: 13.5px;
             }
         }
 
@@ -100,9 +100,47 @@
         }
         .timetable th { background-color: #f9fafb; color: #2c3e50; font-size: 16px; font-weight: bold; }
         
+        /* 💡 교회소식 노션 연동 카드 레이아웃 스타일 */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 15px;
+        }
+        .news-card {
+            background: #f8f9fa;
+            border: 1px solid #eef0f2;
+            border-radius: 10px;
+            padding: 25px 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.08);
+            border-color: #3498db;
+        }
+        .news-card .icon { font-size: 35px; margin-bottom: 10px; display: block; }
+        .news-card h3 { font-size: 18px; color: #2c3e50; margin-bottom: 8px; }
+        .news-card p { font-size: 13.5px; color: #777; margin-bottom: 15px; }
+        .news-btn {
+            display: inline-block;
+            background-color: #3498db;
+            color: #fff;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+        .news-card:hover .news-btn {
+            background-color: #2980b9;
+        }
+
         @media (max-width: 768px) {
             .content-box { padding: 20px; }
             .timetable th, .timetable td { font-size: 14px; padding: 12px 5px; }
+            .news-card { padding: 20px 15px; }
         }
 
         /* 6. 푸터 */
@@ -187,9 +225,33 @@
 
     <section id="news">
         <h2>교회소식</h2>
-        <div class="content-box" style="text-align: center;">
-            <p>교회 소식 및 주보가 업데이트되는 공간입니다.</p>
-            <p style="color: #777; margin-top: 10px; font-size: 14px;">(현재 준비 중입니다.)</p>
+        <div class="content-box">
+            <p style="text-align: center; margin-bottom: 25px; color: #555; font-size: 15px;">
+                주보 및 교회 공지사항은 <b>성인교회 공식 노션 게시판</b>에서 실시간으로 업데이트됩니다.
+            </p>
+            
+            <div class="news-grid">
+                <a href="#" target="_blank" class="news-card">
+                    <span class="icon">📖</span>
+                    <h3>교회 주보</h3>
+                    <p>이번 주 주보 및 지난 주보 보기</p>
+                    <span class="news-btn">주보 보기</span>
+                </a>
+
+                <a href="#" target="_blank" class="news-card">
+                    <span class="icon">📢</span>
+                    <h3>교회 소식</h3>
+                    <p>교회 공지 및 주요 행사 안내</p>
+                    <span class="news-btn">공지 보기</span>
+                </a>
+
+                <a href="#" target="_blank" class="news-card">
+                    <span class="icon">📸</span>
+                    <h3>교회 앨범</h3>
+                    <p>예배 및 행사 사진 보러가기</p>
+                    <span class="news-btn">사진 보기</span>
+                </a>
+            </div>
         </div>
     </section>
 
