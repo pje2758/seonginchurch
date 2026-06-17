@@ -13,7 +13,7 @@
         /* 상단 헤더 (로고 및 메뉴) */
         header {
             background-color: #ffffff;
-            padding: 20px 50px;
+            padding: 10px 20px; /* 위아래 여백을 줄이고 좌우 여백을 20px로 줄여 왼쪽으로 더 붙게 했습니다 */
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -21,6 +21,11 @@
             position: sticky;
             top: 0;
             z-index: 100;
+        }
+        .logo { 
+            text-align: left; 
+            display: flex;
+            align-items: center;
         }
         .logo { text-align: left; }
         .logo .denomination { font-size: 12px; color: #777; font-weight: bold; letter-spacing: 1px; display: block; margin-bottom: 2px; }
@@ -65,7 +70,7 @@
 
     <header>
         <div class="logo">
-            <a href="#"><img src="logo.png" alt="대한예수교장로회 성인교회 로고" style="height: 55px; display: block;"></a>
+            <a href="#"><img src="logo.png" alt="대한예수교장로회 성인교회 로고" style="height: 80px; display: block;"></a>
         </div>
         <nav>
             <ul>
