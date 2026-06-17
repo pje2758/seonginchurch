@@ -39,7 +39,7 @@
         .hero {
             background: url('backgroundwhole.png') no-repeat center center/cover;
             width: 100%;
-            height: 600px; /* 전체화면 시 시원하게 보일 높이 */
+            height: 600px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -78,13 +78,36 @@
         section h2::after { content: ''; display: block; width: 50px; height: 2px; background-color: #3498db; margin: 10px auto 0; }
         .content-box { background: #ffffff; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); text-align: left; }
 
-        /* 예배안내 표 */
-        .timetable { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        .timetable th, .timetable td { padding: 12px; border-bottom: 1px solid #eee; text-align: center; }
-        .timetable th { background-color: #f9fafb; color: #2c3e50; font-size: 15px; }
+        /* 💡 예배안내 모바일 줄바꿈 방지 및 스크롤 최적화 스타일 */
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto; /* 모바일에서 표가 넘치면 부드럽게 가로 스크롤 생성 */
+            -webkit-overflow-scrolling: touch;
+        }
+        .timetable { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin-top: 10px; 
+            min-width: 450px; /* 모바일에서 표가 너무 찌그러지지 않도록 최소 폭 고정 */
+        }
+        .timetable th, .timetable td { 
+            padding: 14px 10px; 
+            border-bottom: 1px solid #eee; 
+            text-align: center; 
+            white-space: nowrap; /* 💡 글자가 아래 줄로 절대 떨어지지 않게 고정 */
+        }
+        .timetable th { background-color: #f9fafb; color: #2c3e50; font-size: 16px; font-weight: bold; }
+        .timetable td { font-size: 15px; }
+
+        /* 모바일용 표 글자 크기 미세 조절 */
+        @media (max-width: 768px) {
+            .content-box { padding: 20px; } /* 모바일 테두리 여백 최적화 */
+            .timetable th { font-size: 14px; padding: 10px 5px; }
+            .timetable td { font-size: 14px; padding: 12px 5px; }
+        }
 
         /* 5. 푸터 */
-        footer { background-color: #2c3e50; color: #fff; text-align: center; padding: 40px 20px; font-size: 14px; }
+        footer { background-color: #2c3e50; color: #fff; text-align: center; padding: 40px 20px; font-size: 14px; line-height: 1.8; }
     </style>
 </head>
 <body>
@@ -108,7 +131,7 @@
         <h2>교회소개</h2>
         <div class="content-box">
             <p style="text-align: center; font-size: 18px; font-weight: bold; margin-bottom: 20px;">"성인교회 홈페이지 방문을 환영합니다."</p>
-            <p>여기에 성인교회의 소개글이나 목사님 인사말을 적으실 수 있습니다. 하나님 안에서 행복한 공동체, 성인교회입니다.</p>
+            <p style="text-align: center; word-break: keep-all;">대한예수교장로회 성인교회는 하나님의 사랑 안에서 건강한 공동체를 이루며,<br>지역 사회와 성도님들의 가정을 섬기는 행복한 교회입니다.</p>
         </div>
     </section>
 
@@ -116,37 +139,49 @@
         <div style="max-width: 900px; margin: 0 auto;">
             <h2>예배안내</h2>
             <div class="content-box">
-                <table class="timetable">
-                    <thead>
-                        <tr>
-                            <th>예배명</th>
-                            <th>시간</th>
-                            <th>장소</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><b>주일 대예배</b></td>
-                            <td>오전 11:00</td>
-                            <td>본당</td>
-                        </tr>
-                        <tr>
-                            <td><b>주일 오후예배</b></td>
-                            <td>오후 2:00</td>
-                            <td>본당</td>
-                        </tr>
-                        <tr>
-                            <td><b>수요기도회</b></td>
-                            <td>오후 7:30</td>
-                            <td>소예배실</td>
-                        </tr>
-                        <tr>
-                            <td><b>새벽기도회</b></td>
-                            <td>월~금 오전 5:30</td>
-                            <td>소예배실</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="table-responsive">
+                    <table class="timetable">
+                        <thead>
+                            <tr>
+                                <th>예배명</th>
+                                <th>시간</th>
+                                <th>장소</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><b>주일 대예배</b></td>
+                                <td>오전 11:00</td>
+                                <td>본당</td>
+                            </tr>
+                            <tr>
+                                <td><b>주일 오후예배</b></td>
+                                <td>오후 2:00</td>
+                                <td>본당</td>
+                            </tr>
+                            <tr>
+                                <td><b>유초등부 예배</b></td>
+                                <td>오전 9:30</td>
+                                <td>지하실</td>
+                            </tr>
+                            <tr>
+                                <td><b>수요기도회</b></td>
+                                <td>오후 7:30</td>
+                                <td>교육관</td>
+                            </tr>
+                            <tr>
+                                <td><b>금요기도회</b></td>
+                                <td>오후 8:00</td>
+                                <td>교육관</td>
+                            </tr>
+                            <tr>
+                                <td><b>새벽기도회</b></td>
+                                <td>월~금, 주일 오전 5:30</td>
+                                <td>교육관</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </section>
@@ -161,7 +196,9 @@
 
     <footer>
         <p>© 대한예수교장로회 성인교회. All Rights Reserved.</p>
-        <p style="font-size: 12px; margin-top: 8px; color: #bdc3c7;">교회 주소: 여기에 교회 주소를 입력하세요 | 전화번호: 000-000-0000</p>
+        <p style="font-size: 13px; margin-top: 10px; color: #bdc3c7; font-weight: normal;">
+            교회 주소: 서울시 강동구 양재대로 133길 23 &nbsp;|&nbsp; 전화번호: 02-476-2171
+        </p>
     </footer>
 
 </body>
