@@ -13,7 +13,7 @@
         /* 2. 상단 헤더 (PC 기준) */
         header {
             background-color: #ffffff;
-            padding: 10px 30px; /* PC에선 넉넉한 여백 */
+            padding: 10px 10px; /* 💡 좌우 여백을 기존 30px에서 10px로 대폭 줄여 로고를 왼쪽 끝으로 밀었습니다 */
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -38,7 +38,7 @@
         /* 3. 모바일 최적화 설정 (화면 폭 768px 이하) */
         @media (max-width: 768px) {
             header {
-                padding: 10px 15px; /* 모바일 좌우 여백 축소하여 공간 확보 */
+                padding: 10px 10px; /* 모바일에서도 깔끔하게 여백 유지 */
             }
             .logo img {
                 height: 50px; /* 모바일에서 로고 크기 작게 조절 */
